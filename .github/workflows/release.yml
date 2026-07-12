@@ -1,0 +1,35 @@
+name: Auto Release Template
+
+on:
+  push:
+    branches:
+      - template
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create Zip Archive
+        run: |
+          # Use zip to compress everything except .git and .github folders
+          zip -r ejournal-1001tutorial-template.zip . -x "*.git*" -x "*.github*"
+
+      - name: Generate Tag Name
+        id: tag
+        run: echo "tag=v$(date +'%Y.%m.%d-%H%M%S')" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: Release ${{ steps.tag.outputs.tag }}
+          draft: false
+          prerelease: false
+          files: ejournal-1001tutorial-template.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
