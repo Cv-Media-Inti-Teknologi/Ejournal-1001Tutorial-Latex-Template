@@ -99,10 +99,14 @@
   \hrule height 0.5pt
 
   % Corresponding author footer
-  \vspace{0.4cm}
-  {\small
-  \textbf{* Corresponding author:}\\
-  \@corrauthor, \@corrauthorafl. \faEnvelope\ \@corremail
-  }
-  \vspace{0.6cm}
+  \begingroup
+    \renewcommand\thefootnote{}%
+    \let\footnoterule\relax
+    \footnotetext{%
+      {\small
+      \textbf{* Corresponding author:}\\
+      \@corrauthor, \@corrauthorafl. \faEnvelope\ \@corremail
+      }%
+    }%
+  \endgroup
 }
