@@ -14,5 +14,6 @@
 % Configures the styling format for section and subsection headings 
 % using the titlesec package.
 % ==============================================================================
-\titleformat{\section}{\centering\bfseries\MakeUppercase}{\thesection}{1em}{}
-\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
+\setcounter{secnumdepth}{0}
+\titleformat{\section}{\centering\bfseries\MakeUppercase}{}{0em}{}
+\titleformat{\subsection}{\bfseries}{}{0em}{}
