@@ -15,7 +15,7 @@
 % the design of the first page of the article (title, abstract, license, etc).
 % ==============================================================================
 \newcommand{\makefrontmatter}{
-  \thispagestyle{empty} % No header/footer on first page
+  \thispagestyle{firstpage} % Uses firstpage style which contains the corresponding author in footer
   
   % Header Box
   \noindent
@@ -97,16 +97,4 @@
   }
   \vspace{0.1cm}
   \hrule height 0.5pt
-
-  % Corresponding author footer
-  \begingroup
-    \renewcommand\thefootnote{}%
-    \let\footnoterule\relax
-    \footnotetext{%
-      {\small
-      \textbf{* Corresponding author:}\\
-      \@corrauthor, \@corrauthorafl. \faEnvelope\ \@corremail
-      }%
-    }%
-  \endgroup
 }
