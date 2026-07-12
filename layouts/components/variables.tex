@@ -1,0 +1,47 @@
+% ==============================================================================
+% COPYRIGHT NOTICE
+% ==============================================================================
+% This file is under https://ejournal.1001tutorial.com
+% It is exclusively for use in designing scientific articles for journals 
+% under https://ejournal.1001tutorial.com/
+% 
+% WARNING: DO NOT MODIFY THIS FILE IF YOU DON'T UNDERSTAND WHAT YOU'RE DOING. 
+% If you do not know what you are doing, please contact the maintainer.
+% 
+% Maintainer: Teguh Rijanandi <teguhrijanandi02@gmail.com>
+% ==============================================================================
+% DESCRIPTION:
+% Defines macro commands and variables that will be filled by the user 
+% in main.tex (e.g., \journalname, \articletitle, DOI, and authors).
+% ==============================================================================
+\newcommand{\journallogo}[1]{\def\@journallogo{#1}}
+\newcommand{\setjournal}[1]{\def\@journallogo{layouts/assets/images/#1_logo.jpeg}}
+\setjournal{jentik} % Default journal ID
+
+\newcommand{\journalname}[1]{\def\@journalname{#1}}
+\journalname{Jurnal Pendidikan Teknologi Informasi dan Komunikasi}
+
+\newcommand{\journalvolume}[1]{\def\@journalvolume{#1}}
+\journalvolume{Volume X}
+\newcommand{\journalissue}[1]{\def\@journalissue{#1}}
+\journalissue{Issue X, xx-xx}
+\newcommand{\journalissn}[1]{\def\@journalissn{#1}}
+\journalissn{2963-1963}
+\newcommand{\journallink}[1]{\def\@journallink{#1}}
+\journallink{https://ejournal.1001tutorial.com/index.php/jentik/index}
+\newcommand{\journaldoi}[1]{\def\@journaldoi{#1}}
+\journaldoi{10.xxxx/xxxx.vXiX.XXXX}
+
+\newcommand{\articletitle}[1]{\title{#1}\def\@articletitle{#1}}
+\newcommand{\articleauthor}[1]{\def\@articleauthor{#1}}
+\newcommand{\runningauthor}[1]{\def\@runningauthor{#1}}
+
+\newcommand{\receiveddate}[1]{\def\@receiveddate{#1}}
+\newcommand{\reviseddate}[1]{\def\@reviseddate{#1}}
+\newcommand{\accepteddate}[1]{\def\@accepteddate{#1}}
+\newcommand{\articlekeywords}[1]{\def\@articlekeywords{#1}}
+\newcommand{\articleabstract}[1]{\def\@articleabstract{#1}}
+
+\newcommand{\corrauthor}[1]{\def\@corrauthor{#1}}
+\newcommand{\corrauthorafl}[1]{\def\@corrauthorafl{#1}}
+\newcommand{\corremail}[1]{\def\@corremail{#1}}

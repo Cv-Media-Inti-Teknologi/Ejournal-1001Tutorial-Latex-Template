@@ -1,0 +1,38 @@
+% ==============================================================================
+% COPYRIGHT NOTICE
+% ==============================================================================
+% This file is under https://ejournal.1001tutorial.com
+% It is exclusively for use in designing scientific articles for journals 
+% under https://ejournal.1001tutorial.com/
+% 
+% Maintainer: Teguh Rijanandi <teguhrijanandi02@gmail.com>
+% ==============================================================================
+% DESCRIPTION:
+% This is the main document file. It is used by authors to input their article 
+% metadata (title, authors, abstract) and include the content sections.
+% ==============================================================================
+\documentclass{layouts/ejournal-1001tutorial-articles}
+
+% References file
+\addbibresource{workspace/references.bib}
+
+% Load article metadata and configurations
+\input{workspace/0-config}
+
+% ==============================================
+% MAIN CONTENT
+% ==============================================
+\begin{document}
+
+% Render the header, title, authors, abstract, and article info
+\makefrontmatter
+
+\input{workspace/1-introduction}
+\input{workspace/2-method}
+\input{workspace/3-results-discussion}
+\input{workspace/4-conclusion}
+\input{workspace/5-declarations}
+
+% References Section
+\printbibliography[heading=bibintoc, title={References}]
+\end{document}

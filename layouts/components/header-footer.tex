@@ -1,0 +1,27 @@
+% ==============================================================================
+% COPYRIGHT NOTICE
+% ==============================================================================
+% This file is under https://ejournal.1001tutorial.com
+% It is exclusively for use in designing scientific articles for journals 
+% under https://ejournal.1001tutorial.com/
+% 
+% WARNING: DO NOT MODIFY THIS FILE IF YOU DON'T UNDERSTAND WHAT YOU'RE DOING. 
+% If you do not know what you are doing, please contact the maintainer.
+% 
+% Maintainer: Teguh Rijanandi <teguhrijanandi02@gmail.com>
+% ==============================================================================
+% DESCRIPTION:
+% Configures the design of the running headers and footers for the second 
+% page onwards using the fancyhdr package.
+% ==============================================================================
+\fancypagestyle{runningpages}{
+  \fancyhf{}
+  \fancyhead[LE,LO]{\@runningauthor}
+  \fancyhead[RE,RO]{\@articletitle}
+  \fancyfoot[LE]{\thepage\ | \@journalname}
+  \fancyfoot[RO]{\@journalname\ | \thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  % Add a line above footer
+  \renewcommand{\footrulewidth}{0.5pt}
+}
+\pagestyle{runningpages}

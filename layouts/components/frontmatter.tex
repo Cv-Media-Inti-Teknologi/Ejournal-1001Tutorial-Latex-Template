@@ -1,0 +1,105 @@
+% ==============================================================================
+% COPYRIGHT NOTICE
+% ==============================================================================
+% This file is under https://ejournal.1001tutorial.com
+% It is exclusively for use in designing scientific articles for journals 
+% under https://ejournal.1001tutorial.com/
+% 
+% WARNING: DO NOT MODIFY THIS FILE IF YOU DON'T UNDERSTAND WHAT YOU'RE DOING. 
+% If you do not know what you are doing, please contact the maintainer.
+% 
+% Maintainer: Teguh Rijanandi <teguhrijanandi02@gmail.com>
+% ==============================================================================
+% DESCRIPTION:
+% Contains the \makefrontmatter command which is responsible for rendering 
+% the design of the first page of the article (title, abstract, license, etc).
+% ==============================================================================
+\newcommand{\makefrontmatter}{
+  \thispagestyle{empty} % No header/footer on first page
+  
+  % Header Box
+  \noindent
+  \definecolor{tableborder}{gray}{0.8}
+  {\renewcommand{\tabularxcolumn}[1]{m{##1}}
+  \arrayrulecolor{tableborder}
+  \begin{tabularx}{\textwidth}{| m{3.5cm} | >{\centering\arraybackslash}X |}
+    \hline
+    \centering\arraybackslash
+    \vspace*{0.4cm}
+    \includegraphics[width=3.2cm,keepaspectratio]{\@journallogo}
+    \vspace*{0.4cm} & 
+    \vspace*{0.4cm}
+    {\Large \textbf{\@journalname}}\vspace{0.15cm}\newline
+    \textbf{\@journalvolume, \@journalissue}\newline
+    e\_ISSN: \@journalissn\newline
+    \url{\@journallink}\newline
+    DOI: \@journaldoi 
+    \vspace*{0.4cm} \\
+    \hline
+  \end{tabularx}%
+  \arrayrulecolor{black}
+  }
+  \vspace{1cm}
+
+  % Title
+  \begin{center}
+    \textbf{\Large \@articletitle}
+  \end{center}
+  \vspace{0.5cm}
+
+  % Authors
+  \begin{center}
+    \@articleauthor
+  \end{center}
+  \vspace{0.4cm}
+
+  % Abstract and Info Box
+  \vspace{0.1cm}
+  \noindent
+  \begin{minipage}[t]{0.3\textwidth}
+    \hrule height 0.5pt
+    \vspace{0.15cm}
+    \textbf{Article Info}
+    \vspace{0.15cm}
+    \hrule height 0.5pt
+    \vspace{0.15cm}
+    \textit{\textbf{Article history:}}\\[0.1cm]
+    {\small
+    Received: \@receiveddate\\
+    Revised: \@reviseddate\\
+    Accepted: \@accepteddate\\[0.1cm]
+    }
+    \rule{\textwidth}{0.5pt}\\[0.1cm]
+    \textit{\textbf{Keywords:}}\\[0.1cm]
+    {\small \@articlekeywords}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.65\textwidth}
+    \hrule height 0.5pt
+    \vspace{0.15cm}
+    \textbf{Abstract} (The word length is not more than 250 words)
+    \vspace{0.15cm}
+    \hrule height 0.5pt
+    \vspace{0.15cm}
+    \@articleabstract
+  \end{minipage}
+  \vspace{0.3cm}
+  \hrule height 0.5pt
+  \vspace{0.1cm}
+  \noindent
+  {\small
+  \textbf{To cite this article:} \@runningauthor. (2026). \@articletitle. \textit{\@journalname, \@journalvolume}(\@journalissue).\\[0.1cm]
+  This article is licensed under a \href{https://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons Attribution-ShareAlike 4.0 International License} \copyright 2026 by author/s\par
+  }
+  \vspace{0.1cm}
+  \hrule height 0.5pt
+
+  % Corresponding author footer
+  \vspace{0.4cm}
+  \noindent\rule{5cm}{0.5pt}\\[0.1cm]
+  {\small
+  \textbf{* Corresponding author:}\\
+  \@corrauthor, \@corrauthorafl. \faEnvelope\ \@corremail
+  }
+  \vspace{0.6cm}
+}

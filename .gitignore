@@ -1,0 +1,26 @@
+# LaTeX generated files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*-blx.bib
+*-SAVE-ERROR
+
+# Ignore generated PDF
+*.pdf
